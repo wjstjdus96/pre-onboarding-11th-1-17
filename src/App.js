@@ -9,20 +9,31 @@ import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Todo from "./components/Todo";
+import { getToken } from "./utils/checkToken";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route>
+        <Route element={<PublicRouter />}>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
         </Route>
-        <Route>
+        <Route element={<PrivateRouter />}>
           <Route path="/todo" element={<Todo />} />
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+const PublicRouter = () => {
+  const accessToken = getToken();
+  return accessToken ? <Navigate to="/todo" replace /> : <Outlet />;
+};
+
+const PrivateRouter = () => {
+  const accessToken = getToken();
+  return accessToken ? <Outlet /> : <Navigate to="/signin" replace />;
+};
