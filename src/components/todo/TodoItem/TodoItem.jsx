@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { deleteTodoItem, updateTodoItem } from '../../../apis/todo';
 import { Button, ButtonWrapper, CheckBox, Input, Label, Span, Wrapper } from './TodoItem.style'
+import { DELETE, SUBMIT, REVISE, CANCEL } from "../../../constants/const";
 
 
 const TodoItem = ({
@@ -77,20 +78,20 @@ const TodoItem = ({
         {!isEdit ? (
           <>
             <Button data-testid="modify-button" onClick={handleEdit}>
-              수정
+              {REVISE}
             </Button>
             <Button
               data-testid="delete-button"
               onClick={deleteTodoItemButonClick}
             >
-              삭제
+              {DELETE}
             </Button>
           </>
         ) : (
           <>
-            <Button data-testid="submit-button" onClick={submitUpdatedItem}>제출</Button>
+            <Button data-testid="submit-button" onClick={submitUpdatedItem}>{SUBMIT}</Button>
             <Button data-testid="cancel-button" onClick={handleEdit}>
-              취소
+              {CANCEL}
             </Button>
           </>
         )}
