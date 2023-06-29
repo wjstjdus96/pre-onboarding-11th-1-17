@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { deleteTodoItem, updateTodoItem } from '../../../apis/todo';
-import { Button, ButtonWrapper, CheckBox, Input, Label, Span, Wrapper } from './TodoItem.style'
+import { ButtonWrapper, CheckBox, Input, Label, Span, Wrapper } from './TodoItem.style'
 import { DELETE, SUBMIT, REVISE, CANCEL } from "../../../constants/const";
+import Button from '../../common/Button';
 import axios from "axios";
 
 
@@ -135,22 +136,13 @@ const TodoItem = ({
       <ButtonWrapper>
         {!isEdit ? (
           <>
-            <Button data-testid="modify-button" onClick={handleEdit}>
-              {REVISE}
-            </Button>
-            <Button
-              data-testid="delete-button"
-              onClick={deleteTodoItemButonClick}
-            >
-              {DELETE}
-            </Button>
+            <Button testId={"modify-button"} text={REVISE} onClick={handleEdit} style={{ padding: '8px 12px'}}/>
+            <Button testId={"delete-button"} text={DELETE} onClick={deleteTodoItemButonClick} style={{ marginLeft: '10px', padding: '8px 12px'}}/>
           </>
         ) : (
           <>
-            <Button data-testid="submit-button" onClick={submitUpdatedItem}>{SUBMIT}</Button>
-            <Button data-testid="cancel-button" onClick={handleEdit}>
-              {CANCEL}
-            </Button>
+            <Button testId={"submit-button"} text={SUBMIT} style={{ padding: '8px 12px'}} onClick={submitUpdatedItem}/>
+            <Button testId={"cancel-button"} text={CANCEL} style={{ marginLeft: '10px', padding: '8px 12px'}} onClick={handleEdit}/>
           </>
         )}
       </ButtonWrapper>

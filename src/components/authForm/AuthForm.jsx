@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import Button from "../common/Button";
 
 export const Form = styled.form`
   display: flex;
@@ -38,23 +39,6 @@ export const Label = styled.label`
   font-weight: bold;
 `;
 
-export const Button = styled.button`
-  width: 280px;
-  height: 40px;
-  border: none;
-  background-color: #439a97;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin-top: 20px;
-  font-weight: bold;
-  &:hover {
-    opacity: 0.7;
-  }
-  &:disabled {
-    cursor: auto;
-    opacity: 1;
-  }
-`;
-
 export default function AuthForm({
   title,
   buttonTestId,
@@ -85,11 +69,9 @@ export default function AuthForm({
           data-testid="password-input"
           onChange={onInputChange}
         />
+        <br />
+      <Button testId={buttonTestId} text={buttonName} disabled={isDisabledButton} style={{ width: '100%'}}/>
       </InputBox>
-
-      <Button data-testid={buttonTestId} disabled={isDisabledButton}>
-        {buttonName}
-      </Button>
     </Form>
   );
 }
