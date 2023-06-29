@@ -6,7 +6,7 @@ import { useAuthForm } from "../hooks/useAuthForm";
 import { SIGN_IN, TOKEN_KEY } from "../constants/const";
 import { checkValidation } from "../utils/checkValidation";
 import { setToken } from "../utils/checkToken";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 export default function SignIn() {
   const navigate = useNavigate();
