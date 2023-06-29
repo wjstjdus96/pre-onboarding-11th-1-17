@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const requestSignUp = async (info) => {
-  return await axios.post(`${API_URL}/auth/signup`, info);
+export const requestSignUp = async (email, password) => {
+  return await axios.post(`${API_URL}/auth/signup`, { email, password });
 };
 
-export const requestSignIn = async (info) => {
-  return await axios.post(`${API_URL}/auth/signin`, info);
+export const requestSignIn = async (email, password) => {
+  return await axios.post(`${API_URL}/auth/signin`, { email, password });
 };
