@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { requestSignIn } from "../apis/auth";
 import { useAuthForm } from "../hooks/useAuthForm";
 import { TOKEN_KEY } from "../constants/const";
+import { checkValidation } from "../utils/checkValidation";
+import { setToken } from "../utils/checkToken";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ export default function SignIn() {
 
     const res = await requestSignIn(email, password);
     if (res?.status === 200) {
-      setAccessToken(TOKEN_KEY, res.data.access_token);
+      setToken(TOKEN_KEY, res.data.access_token);
       navigate("/todo", { replace: true });
     }
   };

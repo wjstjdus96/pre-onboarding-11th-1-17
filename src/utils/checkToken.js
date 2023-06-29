@@ -10,3 +10,6 @@ export const checkToken = () => {
 export const getToken = () => {
   return localStorage.getItem(TOKEN_KEY);
 };
+
+export const setToken = (key, accessToken) =>
+  localStorage.setItem(key, accessToken);
