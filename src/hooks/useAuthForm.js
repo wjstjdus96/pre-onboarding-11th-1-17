@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useAuthForm() {
+export const useAuthForm = () => {
   const [authFormValue, setAuthFormValue] = useState({
     email: "",
     password: "",
@@ -14,4 +14,4 @@ export default function useAuthForm() {
   };
 
   return { authFormValue, handleChange };
-}
+};

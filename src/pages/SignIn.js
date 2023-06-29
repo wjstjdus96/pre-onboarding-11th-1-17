@@ -18,11 +18,16 @@ export default function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const res = await requestSignIn(email, password);
-    if (res?.status === 200) {
-      setToken(TOKEN_KEY, res.data.access_token);
-      navigate("/todo", { replace: true });
-    }
+    await requestSignIn(email, password)
+      .then((res) => {
+        if (res?.status === 200) {
+          setToken(TOKEN_KEY, res.data.access_token);
+          navigate("/todo", { replace: true });
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   return (
