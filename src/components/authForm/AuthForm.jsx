@@ -1,5 +1,5 @@
-import { styled } from "styled-components";
-import Button from "../common/Button";
+import {styled} from 'styled-components';
+import Button from '../common/Button';
 
 export const Form = styled.form`
   display: flex;
@@ -70,7 +70,12 @@ export default function AuthForm({
           onChange={onInputChange}
         />
         <br />
-      <Button testId={buttonTestId} text={buttonName} disabled={isDisabledButton} style={{ width: '100%'}}/>
+        <Button
+          testId={buttonTestId}
+          text={buttonName}
+          disabled={isDisabledButton}
+          style={{width: '100%'}}
+        />
       </InputBox>
     </Form>
   );

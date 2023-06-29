@@ -1,6 +1,6 @@
-import { HomeBoxShadow, Wrapper } from "./styles/Layout.style";
+import {HomeBoxShadow, Wrapper} from './styles/Layout.style';
 
-export default function HomeLayout({ children }) {
+export default function HomeLayout({children}) {
   return (
     <Wrapper>
       <HomeBoxShadow>{children}</HomeBoxShadow>

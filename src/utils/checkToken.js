@@ -1,4 +1,4 @@
-import { TOKEN_KEY } from "../constants/const";
+import {TOKEN_KEY} from '../constants/const';
 
 export const checkToken = () => {
   if (getToken()) {

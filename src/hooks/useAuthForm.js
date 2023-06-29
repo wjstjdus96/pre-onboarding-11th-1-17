@@ -1,17 +1,17 @@
-import { useState } from "react";
+import {useState} from 'react';
 
 export const useAuthForm = () => {
   const [authFormValue, setAuthFormValue] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     setAuthFormValue({
       ...authFormValue,
       [event.target.id]: event.target.value,
     });
   };
 
-  return { authFormValue, handleChange };
+  return {authFormValue, handleChange};
 };

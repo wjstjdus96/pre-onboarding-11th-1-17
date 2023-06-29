@@ -1,29 +1,29 @@
-import AuthForm from "../components/authForm/AuthForm";
-import AuthLayout from "../layouts/AuthLayout";
-import { useNavigate } from "react-router-dom";
-import { requestSignUp } from "../apis/auth";
-import { useAuthForm } from "../hooks/useAuthForm";
-import { checkValidation } from "../utils/checkValidation";
-import { SIGN_UP } from "../constants/const";
+import AuthForm from '../components/authForm/AuthForm';
+import AuthLayout from '../layouts/AuthLayout';
+import {useNavigate} from 'react-router-dom';
+import {requestSignUp} from '../apis/auth';
+import {useAuthForm} from '../hooks/useAuthForm';
+import {checkValidation} from '../utils/checkValidation';
+import {SIGN_UP} from '../constants/const';
 
 export default function SignUp() {
   const navigate = useNavigate();
 
   const {
-    authFormValue: { email, password },
+    authFormValue: {email, password},
     handleChange,
   } = useAuthForm();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
 
     await requestSignUp(email, password)
-      .then((res) => {
+      .then(res => {
         if (res?.status === 201) {
-          navigate("/signin");
+          navigate('/signin');
         }
       })
-      .catch((err) => {
+      .catch(err => {
         alert(err);
       });
   };
@@ -32,7 +32,7 @@ export default function SignUp() {
     <AuthLayout>
       <AuthForm
         title={SIGN_UP}
-        buttonTestId={"signup-button"}
+        buttonTestId={'signup-button'}
         buttonName={SIGN_UP}
         onSubmit={handleSubmit}
         onInputChange={handleChange}

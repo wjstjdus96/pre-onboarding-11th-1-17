@@ -1,8 +1,8 @@
-import HomeLayout from "../layouts/HomeLayout";
-import { Link } from "react-router-dom";
-import Button from "../components/common/Button";
-import { SIGN_IN, SIGN_UP, TODO, HOME } from "../constants/const";
-import styled from "styled-components";
+import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+import HomeLayout from '../layouts/HomeLayout';
+import Button from '../components/common/Button';
+import {SIGN_IN, SIGN_UP, TODO, HOME} from '../constants/const';
 
 const Buttons = styled.div`
   display: flex;

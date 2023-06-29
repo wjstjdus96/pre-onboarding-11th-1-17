@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.button`
   background-color: #439a97;
@@ -13,7 +13,7 @@ const Wrapper = styled.button`
   }
 `;
 
-export default function Button({ text, testId, ...otherProps }) {
+export default function Button({text, testId, ...otherProps}) {
   return (
     <Wrapper data-testid={testId ? testId : null} {...otherProps}>
       {text}

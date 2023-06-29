@@ -1,15 +1,9 @@
-import {
-  BrowserRouter,
-  Navigate,
-  Outlet,
-  Route,
-  Routes,
-} from "react-router-dom";
-import Home from "./pages/Home";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import Todo from "./pages/Todo";
-import { getToken } from "./utils/checkToken";
+import {BrowserRouter, Navigate, Outlet, Route, Routes} from 'react-router-dom';
+import Home from './pages/Home';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
+import Todo from './pages/Todo';
+import {getToken} from './utils/checkToken';
 
 export default function App() {
   return (
