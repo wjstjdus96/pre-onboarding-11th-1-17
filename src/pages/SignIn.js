@@ -6,6 +6,7 @@ import { useAuthForm } from "../hooks/useAuthForm";
 import { SIGN_IN, TOKEN_KEY } from "../constants/const";
 import { checkValidation } from "../utils/checkValidation";
 import { setToken } from "../utils/checkToken";
+import axios, { AxiosError } from "axios";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function SignIn() {
           const axiosError = error;
           if (axiosError.response) {
             // 요청은 성공했지만 서버에서 오류 응답을 반환한 경우
-            setMsg(axiosError.response.data.message);
+            console.log(axiosError.response.data.message);
           } else if (axiosError.request) {
             // 요청이 이루어졌지만 응답을 받지 못한 경우
             console.log("No response received:", axiosError.request);
