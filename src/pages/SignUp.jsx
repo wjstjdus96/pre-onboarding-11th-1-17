@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import {useState} from 'react';
 import AuthForm from '../components/authForm/AuthForm';
 import AuthLayout from '../layouts/AuthLayout';
 import {requestSignUp} from '../apis/auth';
@@ -8,6 +9,7 @@ import {SIGN_UP} from '../constants/const';
 
 export default function SignUp() {
   const navigate = useNavigate();
+  const [formMsg, setFormMsg] = useState('');
 
   const {
     authFormValue: {email, password},
@@ -24,7 +26,8 @@ export default function SignUp() {
         }
       })
       .catch(err => {
-        alert(err);
+        // alert(err);
+        setFormMsg(err.response.data.message);
       });
   };
 
@@ -37,6 +40,7 @@ export default function SignUp() {
         onSubmit={handleSubmit}
         onInputChange={handleChange}
         isDisabledButton={checkValidation(email, password)}
+        formMsg={formMsg}
       />
     </AuthLayout>
   );

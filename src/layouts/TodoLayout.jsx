@@ -15,7 +15,11 @@ export default function TodoLayout({children}) {
         <Button
           text={LOGOUT}
           onClick={logout}
-          style={{marginLeft: 'auto', marginRight: '2rem'}}
+          style={{
+            marginLeft: 'auto',
+            marginRight: '2rem',
+            backgroundColor: '#e25f5f',
+          }}
         />
         <Title>TODO</Title>
         {children}

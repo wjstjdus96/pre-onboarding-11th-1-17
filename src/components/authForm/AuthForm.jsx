@@ -46,6 +46,7 @@ export default function AuthForm({
   isDisabledButton,
   onSubmit,
   onInputChange,
+  formMsg,
 }) {
   return (
     <Form onSubmit={onSubmit}>
@@ -69,6 +70,7 @@ export default function AuthForm({
           data-testid="password-input"
           onChange={onInputChange}
         />
+        <div style={{paddingTop: '0.5rem', fontSize: '0.8rem'}}>{formMsg}</div>
         <br />
         <Button
           testId={buttonTestId}
