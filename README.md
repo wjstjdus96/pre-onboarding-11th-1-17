@@ -26,7 +26,7 @@ $ npm run start
 
 ## 실행 화면
 
-![practiceVideo](/assets/practiceVideo.gif)
+![practiceVideo](/assets/practiceVideo1.gif)
 
 ## 개발환경
 
