@@ -92,3 +92,7 @@ components/todo → todo를 구성하는 todoList, todoItem, addTodo
 components/autoForm → 로그인과 회원가입에 공통적으로 사용되는 form
 components/common → 재사용이 가능한 button과 input
 ```
+
+### 실행 화면
+
+![practiceVideo](/assets/practiceVideo.gif)

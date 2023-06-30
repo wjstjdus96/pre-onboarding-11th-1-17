@@ -12,6 +12,7 @@ export const RES_MESSAGE = {
 
 export const SIGN_UP = '회원가입';
 export const SIGN_IN = '로그인';
+export const LOGOUT = '로그아웃';
 export const HOME = 'HOME';
 export const TODO = 'TO DO';
 export const SUBMIT = '제출';
