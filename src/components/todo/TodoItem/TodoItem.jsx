@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import axios from 'axios';
 import {deleteTodoItem, updateTodoItem} from '../../../apis/todo';
 import {
   ButtonWrapper,
@@ -10,7 +11,6 @@ import {
 } from './TodoItem.style';
 import {DELETE, SUBMIT, REVISE, CANCEL} from '../../../constants/const';
 import Button from '../../common/Button';
-import axios from 'axios';
 
 const TodoItem = ({data, index, setTodoItems}) => {
   const {id, todo, isCompleted} = data;
@@ -60,7 +60,7 @@ const TodoItem = ({data, index, setTodoItems}) => {
   };
 
   const handleCheckboxChange = async event => {
-    const checked = event.target.checked;
+    const {checked} = event.target;
     const indexToUpdate = index;
     try {
       const res = await updateTodoItem(id, todo, checked);

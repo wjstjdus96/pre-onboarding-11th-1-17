@@ -15,7 +15,7 @@ const Wrapper = styled.button`
 
 export default function Button({text, testId, ...otherProps}) {
   return (
-    <Wrapper data-testid={testId ? testId : null} {...otherProps}>
+    <Wrapper data-testid={testId || null} {...otherProps}>
       {text}
     </Wrapper>
   );

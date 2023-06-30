@@ -1,6 +1,6 @@
+import {useNavigate} from 'react-router-dom';
 import AuthForm from '../components/authForm/AuthForm';
 import AuthLayout from '../layouts/AuthLayout';
-import {useNavigate} from 'react-router-dom';
 import {requestSignUp} from '../apis/auth';
 import {useAuthForm} from '../hooks/useAuthForm';
 import {checkValidation} from '../utils/checkValidation';

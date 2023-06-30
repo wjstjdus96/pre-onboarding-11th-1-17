@@ -1,10 +1,7 @@
-import { Wrapper } from "./TodoList.style";
+import {Wrapper} from './TodoList.style';
 
-
-const TodoList = ({ children }) => {
-  return (
-    <Wrapper>{children}</Wrapper>
-  )
-}
+const TodoList = ({children}) => {
+  return <Wrapper>{children}</Wrapper>;
+};
 
 export default TodoList;

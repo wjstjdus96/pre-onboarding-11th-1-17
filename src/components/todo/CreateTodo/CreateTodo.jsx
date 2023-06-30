@@ -1,9 +1,9 @@
 import {useState} from 'react';
+import axios from 'axios';
 import {Input, Wrapper} from './CreateTodo.style';
 import {createTodoItem} from '../../../apis/todo';
 import {ADD} from '../../../constants/const';
 import Button from '../../common/Button';
-import axios from 'axios';
 
 const CreateTodo = ({todoItems, setTodoItems}) => {
   const [newTodoItem, setNewTodoItem] = useState('');

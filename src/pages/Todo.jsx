@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
+import axios from 'axios';
 import TodoLayout from '../layouts/TodoLayout';
 import CreateTodo from '../components/todo/CreateTodo/CreateTodo';
 import TodoList from '../components/todo/TodoList/TodoList';
 import TodoItem from '../components/todo/TodoItem/TodoItem';
-import axios from 'axios';
 import {getTodoItems} from '../apis/todo';
 
 export default function Todo() {
