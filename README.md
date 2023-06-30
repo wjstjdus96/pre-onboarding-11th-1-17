@@ -1,8 +1,17 @@
 # 원티드 프론트엔드 인턴십 - 17 팀
 
-- 1주차 과제
+- 1주차 과제 [회의록](https://lean-mahogany-686.notion.site/8abcd924dc224a16927d312b9b671b80)
 
 ---
+
+| 이름   | 역할        |
+| ------ | ----------- |
+| 최종현 | 팀장        |
+| 윤지영 |             |
+| 변성진 |             |
+| 김수환 |             |
+| 전서연 |             |
+| 김하연 | 사정상 불참 |
 
 ## 실행방법
 
@@ -13,7 +22,11 @@ $ npm run start
 
 ## 프로젝트 링크
 
-[바로가기](https://main--dynamic-stardust-16b5d1.netlify.app/)
+[프로젝트 바로가기](https://main--dynamic-stardust-16b5d1.netlify.app/)
+
+## 실행 화면
+
+![practiceVideo](/assets/practiceVideo.gif)
 
 ## 개발환경
 
@@ -88,11 +101,7 @@ $ npm run start
 - 프로젝트가 커질 경우를 대비해 단위 세분화
 
 ```
-components/todo → todo를 구성하는 todoList, todoItem, addTodo
+components/todo → todo를 구성하는 todoList, todoItem, createTodo
 components/autoForm → 로그인과 회원가입에 공통적으로 사용되는 form
 components/common → 재사용이 가능한 button과 input
 ```
-
-### 실행 화면
-
-![practiceVideo](/assets/practiceVideo.gif)
