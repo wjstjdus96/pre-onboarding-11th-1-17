@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# 원티드 프론트엔드 인턴십 - 17 팀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 1주차 과제
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 실행방법
 
-### `npm start`
+```
+$ npm install
+$ npm run start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 프로젝트 링크
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[바로가기](https://main--dynamic-stardust-16b5d1.netlify.app/)
 
-### `npm test`
+## 개발환경
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 언어 : javascript
+- 라이브러리 및 프레임워크: axios, styled-components, react-router-dom
+- 배포 : netlify
 
-### `npm run build`
+## 폴더구조
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+/src/apis → api 요청 함수를 모아둔 폴더
+/src/components → 페이지에 사용되는 컴포넌트를 모아둔 폴더
+/src/hooks → 커스텀 훅을 모아둔 폴더
+/src/pages → 각 route에 해당하는 페이지를 모아둔 폴더
+/src/utils → 공통적으로 사용하는 함수를 모아둔 폴더
+/src/constants → 상수를 모아둔 폴더
+/src/layouts  → 페이지 레이아웃을 모아둔 폴더
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 기능 설명
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 회원가입
+- 로그인 / 로그아웃
+  - 이메일, 비밀번호 유효성 검사
+- 투두리스트
+  - 투두 리스트 작성
+  - 투두 리스트 수정
+  - 투두 리스트 삭제
 
-### `npm run eject`
+## 구현 방법 - Best Practice
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### API 처리
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- axios를 사용하여 api 요청
+- auth와 todo로 api 분리
+- axios.create()를 사용해 공통 설정을 모두 넣은 인스턴트를 만들어 코드의 중복 사용을 줄임
+- api url을 따로 상수로 분리해 관리가 편하도록 함
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### localstorage 관리
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- utils 폴더에 localStorage 관리 함수를 따로 구현
+- 토큰 key를 따로 상수로 분리
 
-## Learn More
+### 라우팅 / 리다이렉트 처리
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 라우팅에 react-router-dom의 BrowserRouter 사용
+- 리다이렉트 처리를 위해 권한을 체크하는 PrivateRouter 컴포넌트 생성
+  토큰이 있을 경우 <Outlet/>을 반환하여 하위 라우트 컴포넌트를 렌더링 하는 방식
+- useEffect로 리다이렉트 처리 시 존재하는 화면 깜박거림을 해결하기 위함
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 에러 처리
 
-### Code Splitting
+- try -catch 구문을 사용하여 console.log로 에러 출력
+- 어떤 상황에서 에러가 나타났는지 명확히 구분하기 위해 에러 케이스를 세분화하여 각각의 에러메세지 지정
+  예 ) 요청을 보내기 전 발생한 경우, 요청은 성공했지만 오류 응답을 경우 등으로 세분화
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 유효성 검사
 
-### Analyzing the Bundle Size
+- utils 폴더에 유효성 검사 함수 따로 분리
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Todo 데이터처리
 
-### Making a Progressive Web App
+- useState 활용하여 todoData 저장 후 활용
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 스타일링 도구
 
-### Advanced Configuration
+- styled component를 기본으로 사용
+- 추후 필요하다면 tailwindCSS 같이 적용
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 컴포넌트 분리
 
-### Deployment
+- 프로젝트가 커질 경우를 대비해 단위 세분화
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+components/todo → todo를 구성하는 todoList, todoItem, addTodo
+components/autoForm → 로그인과 회원가입에 공통적으로 사용되는 form
+components/common → 재사용이 가능한 button과 input
+```
